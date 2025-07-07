@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #f0609e, #fbad18, #f04e32, #3b74ba);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+main .left,
+main .right {
+  height: 100%;
+  flex-basis: 50%;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  resize: horizontal;
+  min-width: 250px;
+}
+
+main .left:hover,
+main .right:hover {
+  transform: scale(1.01);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+main .left {
+  background: linear-gradient(135deg, #000000, #3b74ba);
+  position: relative;
+  color: #ffffff;
+}
+
+.left .code,
+.code pre,
+.code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 1rem;
+  background: #000000;
+  color: #fbad18;
+  font-size: 1rem;
+  padding: 1rem;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+/* Custom Scrollbar */
+.code pre::-webkit-scrollbar,
+.right::-webkit-scrollbar {
+  width: 8px;
+}
+
+.code pre::-webkit-scrollbar-track,
+.right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.code pre::-webkit-scrollbar-thumb,
+.right::-webkit-scrollbar-thumb {
+  background: #f0609e;
+  border-radius: 4px;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: linear-gradient(to right, #fbad18, #f04e32);
+  color: #000000;
+  padding: 0.6rem 2.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 2rem;
+  box-shadow: 0 0 15px #fbad18;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+main .left .review:hover {
+  background: linear-gradient(to right, #f0609e, #fbad18);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #f04e32;
+}
+
+main .right {
+  background: linear-gradient(to top left, #f9f9f9, #f4f4f4);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  color: #000000;
+  overflow: auto;
+  line-height: 1.7;
+  word-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
